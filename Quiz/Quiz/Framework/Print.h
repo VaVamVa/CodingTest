@@ -7,7 +7,7 @@ void PrintData(T result)
 }
 
 template <typename T>
-void PrintDatas(T& result)
+void PrintDatas(T result)
 {
     for (auto elem : result)
         cout << elem << " ";
@@ -15,7 +15,7 @@ void PrintDatas(T& result)
 }
 
 template <typename T>
-void PrintDatasTwice(T& result)
+void PrintDatasTwice(T result)
 {
     for (auto elems : result)
     {
