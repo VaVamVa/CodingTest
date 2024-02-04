@@ -3,7 +3,7 @@
 
 int main()
 {
-    CHECK(SolMain());
+    CHECK_1(SolMain());
 
     return 0;
 }

@@ -19,6 +19,7 @@
 using namespace std;
 
 #include "Framework/Print.h"
+#include "Framework/Math.h"
 
 #define CHECK PrintData
 #define CHECK_1 PrintDatas
