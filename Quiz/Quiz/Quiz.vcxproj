@@ -132,6 +132,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Framework\Solution.cpp" />
     <ClCompile Include="Quiz.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +140,7 @@
     <ClInclude Include="Framework\Math.h" />
     <ClInclude Include="Framework\Print.h" />
     <ClInclude Include="Framework\Solution.h" />
+    <ClInclude Include="Framework\Utilities.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

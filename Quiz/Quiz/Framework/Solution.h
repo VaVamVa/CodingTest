@@ -1,36 +1,72 @@
 #pragma once
 
-//https://school.programmers.co.kr/learn/courses/30/lessons/120911
-// ¼¼±Õ Áõ½Ä
+//https://www.hackerrank.com/challenges/sherlock-and-anagrams/problem?utm_campaign=challenge-recommendation&utm_medium=email&utm_source=7-day-campaign
+//anagram
 
-string solution(string my_string) {
-    string answer = "";
-    vector<int> order(26, 0);
+/*
+ * Complete the 'sherlockAndAnagrams' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts STRING s as parameter.
+ */
 
-    int index;
-    for (char c : my_string)
+#define N_INF -2147483648
+#define INF 2147483647
+
+struct RoundResult
+{
+    RoundResult(int max, vector<int> result)
+    : max(max), result(result) {}
+
+    int max = -1;
+    int minPoint = 11;
+    int minPointCount = 0;
+    vector<int> result = vector<int>(11,0);
+};
+
+RoundResult Counting(int startPoint, int shootCount, int apeachScore, vector<int> apeachInfo);
+
+vector<int> solution(int n, vector<int> info) {
+    vector<int> answer(11, 0);
+
+    int apeach = 0;
+    for (int i = 0; i < 10; ++i)
     {
-        index = c < 'a' ? c - 'A' : c - 'a';
-        order[index]++;
+        if (info[i] > 0)
+        {
+            apeach += 10 - i;
+        }
+    }
+    if (apeach == 55 - (0.5 * (10 - n) * (10 - n + 1)))
+    {
+        return { -1 };
     }
 
-    for (int i = 0; i < order.size(); i++)
+    int max = N_INF;
+    int minPoint = 11;
+    int minPointCount = 0;
+    for (int i = 0; i < 11; ++i)
     {
-        for (int count = 0; count < order[i]; count++)
-            answer += 'a' + i;
+        RoundResult Case = Counting(i, n, apeach, info);
+
     }
+
+
 
     return answer;
 }
 
-/////////////////////////////////////////////////////////////////////////
-string SolMain()
-{
-    string str = "Bcad";
-    
-    /*
-    str = "heLLo";
-    */
 
-    return solution(str);
+RoundResult Counting(int startPoint, int shootCount, int apeachScore, vector<int> apeachInfo)
+{
+
+}
+
+////////////////////////////////////////////////////////////////////////////
+
+void SolMain()
+{
+    CHECK_1(solution(5, { 2,1,1,1,0,0,0,0,0,0,0 }));
+
+    return ;
 }
