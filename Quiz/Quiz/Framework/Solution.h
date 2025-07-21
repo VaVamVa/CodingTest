@@ -1,36 +1,27 @@
 #pragma once
 
-//https://school.programmers.co.kr/learn/courses/30/lessons/120911
-// ¼¼±Õ Áõ½Ä
 
-string solution(string my_string) {
-    string answer = "";
-    vector<int> order(26, 0);
 
-    int index;
-    for (char c : my_string)
-    {
-        index = c < 'a' ? c - 'A' : c - 'a';
-        order[index]++;
-    }
-
-    for (int i = 0; i < order.size(); i++)
-    {
-        for (int count = 0; count < order[i]; count++)
-            answer += 'a' + i;
-    }
-
+int solution(vector<vector<int>> info, int n, int m) {
+    int answer = 0;
+    
     return answer;
 }
 
-/////////////////////////////////////////////////////////////////////////
-string SolMain()
-{
-    string str = "Bcad";
-    
-    /*
-    str = "heLLo";
-    */
+////////////////////////////////////////////////////////////////////////////
 
-    return solution(str);
+void SolMain()
+{
+    vector<vector<int>> info;
+    info = { {1, 2}, {2, 3}, {2, 1} };
+    //info = { { 3, 3 }, { 3, 3 } };
+
+    int n, m;
+    n = 4, m = 4;
+    //n = 7, m = 1;
+    //n = 6;
+
+    CHECK(solution(info, n, m));
+
+    return ;
 }
