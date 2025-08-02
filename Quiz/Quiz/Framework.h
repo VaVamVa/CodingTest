@@ -19,6 +19,8 @@
 
 using namespace std;
 
+#include "Framework/Tree.h"
+
 #include "Framework/Print.h"
 #include "Framework/Math.h"
 //#include "Framework/Utilities.h"
@@ -29,3 +31,4 @@ using namespace std;
 #define CHECK_A PrintArrayData
 
 #include "Framework/Solution.h"
+#include "Framework/BaekjoonSol.h"

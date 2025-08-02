@@ -3,7 +3,8 @@
 
 int main()
 {
-    SolMain();
+    //SolMain();
+    BSolMain();
 
     return 0;
 }

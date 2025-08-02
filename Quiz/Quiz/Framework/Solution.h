@@ -1,27 +1,90 @@
 #pragma once
 
+int ToIntAndClear(string& loaded_elem)
+{
+    int elem = stoi(loaded_elem);
+    loaded_elem.clear();
+    return elem;
+}
+
+vector<int> Result(vector<set<int>*> arr)
+{
+    vector<int> result;
+    set<int>* prevNode = nullptr;
+    for (set<int>* elems : arr)
+    {
+        if (elems == nullptr) break;
+        if (!prevNode) result.push_back(*elems->begin());
+        else
+        {
+            for (int elem : *elems)
+            {
+                if (prevNode->find(elem) == prevNode->end())
+                {
+                    result.push_back(elem);
+                    break;
+                }
+            }
+        }
+        prevNode = elems;
+    }
+
+    for (set<int>* elems : arr)
+    {
+        delete elems;
+    }
+
+    return result;
+}
 
 
-int solution(vector<vector<int>> info, int n, int m) {
-    int answer = 0;
-    
-    return answer;
+vector<int> solution(string s) {
+    vector<set<int>*> checkArr(500, nullptr);
+    set<int>* elems = nullptr;
+
+    string loading_elem = "";
+
+    int tmp_elem = 0;
+    int count = 0;
+    bool flag = false;
+    for (char& digit : s) {
+        switch (digit)
+        {
+        case '{':
+            elems = new set<int>;
+            count = 0;
+            flag = true;
+            break;
+        case '}':
+            if (flag == false) {
+                return Result(checkArr);
+            }
+            flag = false;
+            elems->insert(ToIntAndClear(loading_elem));
+            checkArr[count] = elems;
+            break;
+        case ',':
+        if (flag)
+        {
+            count++;
+            elems->insert(ToIntAndClear(loading_elem));
+        }
+            break;
+        default:
+            if (flag) loading_elem += digit;
+            break;
+        }
+    }
+    return {};
 }
 
 ////////////////////////////////////////////////////////////////////////////
 
 void SolMain()
 {
-    vector<vector<int>> info;
-    info = { {1, 2}, {2, 3}, {2, 1} };
-    //info = { { 3, 3 }, { 3, 3 } };
+    string s = "{{1,2,3},{2,1},{1,2,4,3},{2}}";
 
-    int n, m;
-    n = 4, m = 4;
-    //n = 7, m = 1;
-    //n = 6;
-
-    CHECK(solution(info, n, m));
+    CHECK_1(solution(s));
 
     return ;
 }
