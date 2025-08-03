@@ -1,4 +1,4 @@
-#include "Framework/Tree.h"
+#include "Framework.h"
 
 template<typename T>
 inline Tree<T>::Tree()

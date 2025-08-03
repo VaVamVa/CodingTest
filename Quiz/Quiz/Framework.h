@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stdio.h>
+#include <stdlib.h>
 
 #include <cmath>
 
@@ -23,12 +25,12 @@ using namespace std;
 
 #include "Framework/Print.h"
 #include "Framework/Math.h"
-//#include "Framework/Utilities.h"
+#include "Framework/Utilities.h"
 
 #define CHECK PrintData
 #define CHECK_1 PrintDatas
 #define CHECK_2 PrintDatasTwice
 #define CHECK_A PrintArrayData
 
+
 #include "Framework/Solution.h"
-#include "Framework/BaekjoonSol.h"

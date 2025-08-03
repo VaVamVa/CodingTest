@@ -104,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>Framework.h</PrecompiledHeaderFile>
       <AdditionalHeaderUnitDependencies>
       </AdditionalHeaderUnitDependencies>
@@ -132,13 +132,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Framework\Solution.cpp" />
-    <ClCompile Include="Framework\Source\Tree.cpp" />
+    <ClCompile Include="Framework.cpp" />
     <ClCompile Include="Quiz.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Framework.h" />
-    <ClInclude Include="Framework\BaekjoonSol.h" />
     <ClInclude Include="Framework\Math.h" />
     <ClInclude Include="Framework\Print.h" />
     <ClInclude Include="Framework\Solution.h" />

@@ -36,3 +36,9 @@ void PrintArrayData(T* result, int size)
     }
     cout << endl;
 }
+
+template <typename T>
+void PrintAuto(T result)
+{
+
+}

@@ -1,10 +1,10 @@
 ﻿#include "Framework.h"
 
-
 int main()
 {
-    //SolMain();
-    BSolMain();
+    ProgrammersMain();
+    //BaekjoonMain();
+
 
     return 0;
 }
